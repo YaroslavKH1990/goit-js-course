@@ -4,7 +4,7 @@ let total = 0;
 do {
      let input = prompt("Введите число");
     if (input === null) {
-        console.log('Отмена');
+        console.log('Вы нажали "Отмена"');
         break;
     } else {
         total = Number(input) + total;

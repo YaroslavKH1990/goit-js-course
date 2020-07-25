@@ -1,13 +1,18 @@
 "use strict";
 
 let total = 0;
+let input;
+
 do {
-     let input = prompt("Введите число");
-    if (input === null) {
-        console.log('Вы нажали "Отмена"');
-        break;
-    } else {
-        total = Number(input) + total;
+    input = prompt("Введите число");
+    
+    if (input !== null) {
+        if (Number.isNaN(Number(input))) {
+            alert("Вы ввели не число");
+        } else {
+            total += Number(input);
+        }
     }
-} while (true);
+} while (input !== null);
+
 alert(`Общая сумма чисел равна ${total}`);

@@ -9,9 +9,10 @@ do {
     if (input !== null) {
         if (Number.isNaN(Number(input))) {
             alert("Вы ввели не число");
-        } else {
-            total += Number(input);
+            
+            continue; //без continue тоже работает
         }
+        total += Number(input);
     }
 } while (input !== null);
 

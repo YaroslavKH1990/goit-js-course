@@ -10,7 +10,8 @@ if (result === null) {
 } else if (result === ADMIN_PASSWORD) {
     message = "Добро пожаловать";
 
-} else { message = "Доступ запрещен, неверный пароль!";
+} else { 
+    message = "Доступ запрещен, неверный пароль!";
 };
 
 alert(message);

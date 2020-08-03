@@ -12,38 +12,18 @@ let total = 0;
 do {
 	input = prompt('Введите число');
 
-	if (Number.isNaN(Number(input))) {
+	if (Number.isNaN(+input)) {
 		alert('Вы ввели не число!');
 		continue;
-	}
-
-	if (numbers.length === 0) {
-		alert('Вы ничего не ввели!');
 	}
 
 	numbers.push(+input);
 } while (input !== null);
 
-for (let number of numbers) {
-	total += number;
+if (numbers.length !== '') {
+	for (let number of numbers) {
+		total += number;
+	}
 }
 
 alert(`Общая сумма чисел равна ${total}`);
-
-// while (input !== null) {
-// 	if (Number.isNaN(input)) {
-// 		alert('Вы ввели не число!');
-// 		continue;
-// 	}
-// 	numbers.push(+input);
-
-// 	input = prompt('Введите число');
-// }
-
-// for (let number of numbers) {
-// 	total += number;
-// 	if (numbers.length === 0) {
-// 		console.log('Массив пустой');
-// 	}
-// }
-// alert(`Общая сумма чисел равна ${total}`);

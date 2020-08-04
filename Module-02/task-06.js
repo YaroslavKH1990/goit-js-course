@@ -12,18 +12,21 @@ let total = 0;
 do {
 	input = prompt('Введите число');
 
-	if (Number.isNaN(+input)) {
+	if (input === null) {
+		break;
+	} else if (Number.isNaN(+input)) {
 		alert('Вы ввели не число!');
-		continue;
+		//continue; //без continue тоже работает!!!
+	} else {
+		numbers.push(+input);
 	}
-
-	numbers.push(+input);
 } while (input !== null);
 
-if (numbers.length !== '') {
+//console.log(numbers.length);
+
+if (numbers.length) {
 	for (let number of numbers) {
 		total += number;
 	}
+	console.log(`Общая сумма чисел равна ${total}`);
 }
-
-alert(`Общая сумма чисел равна ${total}`);

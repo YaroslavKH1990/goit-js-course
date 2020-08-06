@@ -12,17 +12,14 @@ let total = 0;
 do {
 	input = prompt('Введите число');
 
-	if (input === null) {
-		break;
-	} else if (Number.isNaN(+input)) {
-		alert('Вы ввели не число!');
-		//continue; //без continue тоже работает!!!
-	} else {
-		numbers.push(+input);
+	if (input !== null) {
+		if (Number.isNaN(+input)) {
+			alert('Вы ввели не число!');
+			continue;
+		}
 	}
+	numbers.push(+input);
 } while (input !== null);
-
-//console.log(numbers.length);
 
 if (numbers.length) {
 	for (let number of numbers) {

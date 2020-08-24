@@ -23,8 +23,7 @@ console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazq
 
 //============================================================================================
 
-const getInactiveUsers = (users) =>
-	users.filter((user) => user.isActive).map((user) => user.name);
+const getInactiveUsers = (users) => users.filter((user) => !user.isActive);
 
 console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
@@ -63,11 +62,10 @@ console.log(calculateTotalBalance(users)); // 20916
 
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
-const getUsersWithFriend = (users, friendName) => {
-	return users
+const getUsersWithFriend = (users, friendName) =>
+	users
 		.filter((user) => user.friends.includes(friendName))
-		.map((user) => (user = user.friends));
-};
+		.map((user) => user.name);
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
@@ -76,11 +74,10 @@ console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sher
 
 //Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 
-const getNamesSortedByFriendsCount = (users) => {
-	return users
+const getNamesSortedByFriendsCount = (users) =>
+	users
 		.sort((a, b) => a.friends.length - b.friends.length)
 		.map((user) => user.name);
-};
 
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
@@ -89,15 +86,14 @@ console.log(getNamesSortedByFriendsCount(users));
 
 //Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
-const getSortedUniqueSkills = (users) => {
-	return users
+const getSortedUniqueSkills = (users) =>
+	users
 		.reduce((allSkills, user) => {
 			allSkills.push(...user.skills);
-			return allSkills;
+			return;
 		}, [])
 		.filter((user, index, arr) => arr.indexOf(user) === index)
 		.sort();
-};
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]

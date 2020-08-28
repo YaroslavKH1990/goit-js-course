@@ -1,6 +1,6 @@
 'use strict';
 
-import users from '/allUsers.js';
+import users from './allUsers.js';
 
 const getUserNames = (users) => users.map((user) => user.name);
 
@@ -90,6 +90,7 @@ const getSortedUniqueSkills = (users) =>
 	users
 		.reduce((allSkills, user) => {
 			allSkills.push(...user.skills);
+
 			return;
 		}, [])
 		.filter((user, index, arr) => arr.indexOf(user) === index)

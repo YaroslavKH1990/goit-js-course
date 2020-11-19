@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  /* background-image: url('./images/bg-pattern.png'); */
+  background-color: rgba(142, 228, 202, 0.856);
+}
+
+.text {
+  font-weight: bold;
+}
+
+.form__search {
+  text-align: center;
+}
+
+.country__info {
+  display: flex;
+  justify-content: center;
+}
+
+.country__flag-img {
+  width: 350px;
+  height: 200px;
+}
+
+.form__input {
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 40px;
+  width: 538px;
+}
+
+.country_list-item {
+  font-size: 24px;
+  font-weight: bold;
+  max-width: 500px;
+  text-align: left;
+  margin: 0 auto;
+}

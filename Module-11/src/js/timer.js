@@ -19,14 +19,14 @@ const timer = {
 timer.start();
 
 function updateClockFace(time) {
-  const secsonds = pad(Math.floor((time % (1000 * 60)) / 1000));
+  const seconds = pad(Math.floor((time % (1000 * 60)) / 1000));
   const minutes = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
   const hours = pad(
     Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
   );
   const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
 
-  refs.timer.textContent = `${days}:${hours}:${minutes}:${secsonds}`;
+  refs.timer.textContent = `${days}:${hours}:${minutes}:${seconds}`;
 }
 
 function pad(value) {

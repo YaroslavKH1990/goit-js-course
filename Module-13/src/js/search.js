@@ -21,6 +21,9 @@ function searchFormImgHandler(event) {
 
   newServices.resetPage();
   newServices.searchQuery = input.value;
+  if (input.value === '') {
+    return;
+  }
   spinner.show();
   newServices
     .fetchArticles()

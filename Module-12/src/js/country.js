@@ -24,8 +24,6 @@ function searchCountryHandler(event) {
 
   if (searchQuery === '') {
     return;
-  } else {
-    fetch(searchQuery);
   }
 
   countriesFetch.fetchCountries(searchQuery).then(data => {
@@ -41,12 +39,6 @@ function searchCountryHandler(event) {
       buildMarkupCountry(data, allCountriesRef);
     }
   });
-  // .catch(error => {
-  //   error({
-  //     text: 'Enter your country',
-  //   });
-  //   console.log(error);
-  // });
 }
 
 refs.formSearchRef.addEventListener(
